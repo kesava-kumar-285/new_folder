@@ -1,0 +1,22 @@
+
+
+
+Assignment2 ---- Kesava Kumar
+1)array=(Ubuntu Fedora Suse Linuxmint)
+  for i in "${!array[@]}"; do
+      if [[ "${array[$i]}" = "${os}" ]];
+         then
+              echo "${i};
+      fi
+  done
+
+2)i) cat >> example.txt
+  ii)a) grep [wn] example.txt    ====> display all lines that cointaining either "w" or "n" character
+     b) sed -e 'd' /etc/passwd   ====> editing command deleting line denoting by the single letter 'd'
+  iii) uname -a > output.txt
+
+3) sed -n '1'p abc.txt | wc -c ====> if you want to check the length of line 1
+
+4) echo "hello world" | awk '{print index($0, "r")}'
+
+5)mysql -u USERNAME -p

@@ -1,0 +1,42 @@
+
+
+
+Assignment 1 ---- Kesava Kumar
+
+1)Shared mountpoints: 
+  A shared mount point allows the creation of an exact replica of a given mount point.
+  When a mount point is marked as a shared mount, any mount with in the original mount point is reflected in it and viceversa.
+  To change the type of a mount point to shared mount:
+
+   mount --make-shared mount_point
+
+  Unbindable mountpoints:
+  In order to prevent a given mount point from being duplicated what so ever, an unbindable mount is used.
+  To change the type of a mount point to an unbindable mount:
+  
+  mount --make-unbindable mount_point
+
+2)mkdir dir1
+  cd dir1
+  touch file1
+  touch file2
+  touch file3
+  cat >> file1
+  the dbs bank full form is developement bank of singapore
+  cat >> file2
+  count the occurence of word bank
+  cat >> file3
+  can you guess the number of occurence of word bank in this file
+  grep -orl bank dir1 | wc -w
+
+3)tail -F $LOGFILE
+
+4)Shell is the command line interface and is both the interactive command language and scripting language to control the execution of the system using shell scripts.
+ It is a program takes the command from the keyboard and gives them to the OS to perform with out using any GUI for selectinglike that things.
+ 
+The types of shell in Unix/Linux
+Bourne shell, C shell, Korn shell, Posix shell etc.
+
+5)echo $SHELL
+
+  

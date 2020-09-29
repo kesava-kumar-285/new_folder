@@ -1,0 +1,49 @@
+Assessment 3 ==== Kesava Kumar
+
+
+
+Challenge 1:
+
+
+UNF: 
+(invoice_no, date, cust_name, cust_address, pet_id, pet_name,procedure_id procedure, procedure_amount, total, amount_owing)
+
+1NF:
+
+invoice_details(invoice_no, date, cust_name, cust_address,total, amount_owing)               [invoice_no =====> primary key]
+pet_details(invoice_no, pet_id, pet_name,procedure_id, procedure, procedure_amount)          [invoice_no, pet_id ====> composite key]
+ 
+2NF:
+
+invoice_details(invoice_no, date, cust_name, cust_address,total,amount_owing)                [invoice_no ====> primary key]
+pet_details(invoice_no, pet_id, petname, procedure)                                          [invoice_no, pet_id ====> composite key]
+procedure_details(procedure_id,procedure, procedure_amount)                                  [procedure_id  ====> primary key]
+
+3NF:
+
+invoice_details(invoice_no, date, cust_name, total,amount_owing)                             [invoice_no ==> primary key]
+pet_details(invoice_no, pet_id, petname, procedure)                                          [invoice_no, pet_id ==>composite key]
+procedure_details(procedure_id,procedure, procedure_amount)                                  [procedure_id  ====> primary key]
+customer_details(invoice_no, cust_name, cust_address)                                        [invoice_no ==> primary key]
+
+
+
+Challenges 2:
+
+Lets take a table custumer_del to store the details of customers after deletion
+
+delimiter //
+
+create or replace trigger trg after deletion on customer_details for each row
+
+BEGIN
+    insert into customer_del values(old.cust_name, old.email, old.phone, old.Address1, old.Address2,
+    old.City, old.Pincode, old.cust_request, old.reported_date,now());
+
+end;
+//
+
+
+
+
+

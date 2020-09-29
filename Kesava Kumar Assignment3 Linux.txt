@@ -1,0 +1,63 @@
+
+
+
+Assignment3 ---- Kesava Kumar
+1) Basic cut, copy and pasta in vi editor
+   cut (dd), copy (yy), paste (p) ====> this is only for a line
+   cutting n lines (ndd) copying n lines (nyy)
+   cutting from the cursor till the end of line (d$)
+   cutting from the cursor till the end of line (y$)
+
+2) i)cut -d: f1 /etc/passwd
+   ii)ls -a | tee -a abc.txt
+   iii)watch date
+
+3) find ./Desktop -name abc.txt
+
+4) diff --brief <(sort file1) <(sort file2)
+
+5) #! /bin/bash
+   echo "enter a number"
+   read a
+   cube=`expr"$a"\*"$a"\*`
+   echo "the cubic value of $a = " $cube
+
+6) #! /bin/bash
+   if [ ! -f /home/user/abc.txt ]; then
+   echo "file not found"
+   else
+   count=($(wc -w /home/user/abc.txt))
+   echo $count
+   fi
+
+====> Tasks given during the class
+
+7.Write a script to add,delete or edit employees
+
+#!/bin/bash
+filename="/home/alchemy/output.txt"
+echo "1.add new employee"
+echo "2.edit employee"
+echo "3.delete employee"
+read opt
+if [ $opt == "1" ]
+then
+   echo "Enter user details to add"
+   read id name age dept sal
+   sed -i -e "$ a  $id $name $age $dept $sal" $filename
+   cat $filename
+
+elif [ $opt == "3" ]
+then 
+   echo "Enter user id to delete"
+   read  id
+   sed -i "/$id/d" $filename
+   cat $filename
+
+elif [ $option == "2" ]
+then
+  echo "Enter id to edit"
+  read id 
+  echo "Enter id name,age,dept,sal"
+fi
+
