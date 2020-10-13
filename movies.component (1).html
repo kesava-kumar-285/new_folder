@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+
+  <div class="form-group">
+    <label for="name">Select Movie Name: </label>
+    <select id="name" name="name" (change)="onOptionsSelected($event.target.value)" class="mdb-select form-control">
+        <option value="select">Choose Movie</option>
+        <option *ngFor="let movie of Movies;" [title]="movie" value="{{movie.name}}">{{movie.name}}</option>
+    </select><br>
+</div>
+ 
+<div class="card-columns" *ngIf="!flag">
+    <div class="card">
+        <img class="card-img-top" src="{{movie.photo}}" alt="Card image cap" width="70" height="350">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.name}}</h5>
+            Movie genre: <b>{{movie.theme}}</b>
+            <hr>
+            <br>Movie Rating :<b>{{movie.rating}}</b>
+
+            
+        </div>
+    </div>
+</div>
+ 
+<div class="card-columns" *ngIf="flag">
+    <div class="card" *ngFor="let movie of Movies">
+        <img class="card-img-top" src="{{movie.photo}}" alt="Card image cap" width="70" height="350">
+        <div class="card-body">
+            <h5 class="card-title">{{movie.name}}</h5>
+            Movie Genre: <b>{{movie.theme}}</b><br>
+          
+            Movie Rating: <b>{{movie.rating}}</b>
+            
+        </div>
+    </div>
+</div>
+
+
+<h2>Reading from Movies json file and printing them in table</h2> 
+
+
+
+
+
+
+    <div>
+      <table class="table table-striped table-dark">
+      <thead>
+      <tr>
+      <th>MOVIE ID</th>
+      <th>MOVIE NAME</th>
+      <th>THEME</th>
+      <th>IMDB RATING</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let mov of Movies">
+      <td>{{mov.id}}</td>
+      <td>{{mov.name}}</td>
+      <td>{{mov.theme}}</td>
+      <td>{{mov.rating}}</td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+     
+    

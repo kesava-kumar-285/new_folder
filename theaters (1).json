@@ -1,0 +1,47 @@
+[
+    {
+    "id":1,
+    "name":"PVR",
+    "location":"Panjagutta",
+    "movies":["1","4"]
+    },
+
+    {
+        "id":2,
+        "name":"IMAX",
+        "location":"Khairtabad",
+        "movies":["2","3","5"]
+    },
+
+    {
+        "id":3,
+        "name":"Cinemax",
+        "location":"Kukatpally",
+        "movies":["1","5"]
+    },
+
+    {
+        "id":4,
+        "name":"Cinepolis",
+        "location":"Shamsabad",
+        "movies":["3","4","5"]
+    },
+
+    {
+        "id":5,
+        "name":"GVK",
+        "location":"Panjagutta",
+        "movies":["1","2","3"]
+    },
+
+    {
+        "id":6,
+        "name":"AMB Cinemas",
+        "location":"Gachibowli",
+        "movies":["1","5","3"]
+    }
+
+    
+
+
+]

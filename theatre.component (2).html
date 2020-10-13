@@ -1,0 +1,61 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+<p>theatre works!</p>
+<div class="form-group">
+    <label for="name">Select Theatre: </label>
+    <select id="name" name="name" (change)="onOptionsSelected($event.target.value)" class="mdb-select form-control">
+        <option value="select">Choose Theatre</option>
+        <option *ngFor="let t of Theatres;" value="{{t.id}}">{{t.name}}</option>
+    </select><br>
+</div>
+
+
+<div class="card-columns" *ngIf="flag">
+  <div class="card" *ngFor="let th of Theatres">
+      <img class="card-img-top" src="../assets/showtime.jpg" alt="Card image cap" width="70" height="350">
+      <div class="card-body">
+          <h5 class="card-title">{{th.name}}</h5>
+          Theatre Location:<b>{{th.location}}</b><br>
+
+      </div>
+  </div>
+</div>
+
+
+<div class="card-columns" *ngIf="!flag">
+    <div class="card" *ngFor="let movie of movieList">
+        <img class="card-img-top" src="{{movie.photo}}" alt="Card image cap" width="70" height="350">
+        <div class="card-body">
+            <h5 class="card-title">{{movie.name}}</h5>
+            Theme: <b>{{movie.theme}}</b> <br>
+            Ratings:<b>{{movie.rating}}</b>
+               
+            
+           
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="flag">
+    <table class="table table-striped table-dark">
+      <thead class="thead-dark">
+        <tr>
+          <th>Theatre ID</th>
+          <th>Theatre Name</th>
+          <th>Theatre Location</th>
+          <th>Box Office</th>
+        </tr>
+      </thead>
+      <tbody class="thead-light">
+        <tr *ngFor="let t of Theatres; let i=index">
+          <td>{{t.id}}</td>
+          <td>{{t.name}}</td>
+          <td>{{t.location}}</td>
+          <td><span *ngFor="let j of thMovies[i] ">{{j.name}} ,</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+

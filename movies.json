@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "name":"Harry Potter",
+        "theme":"Fiction",
+        "rating":"4.5",
+         "photo": "../assets/potter (1).jpg"
+    },
+    {
+        "id":2,
+        "name":"Interstellar",
+        "theme":"Science",
+        "rating":"5.0",
+        "photo":"../assets/Interstellar.jpg"
+    },
+    {
+        "id":3,
+        "name":"Joker",
+        "theme":"Comdey Fiction",
+        "rating":"4.5",
+        "photo":"../assets/joker.jpg"
+    },
+    {
+        "id":4,
+        "name":"Kesari",
+        "theme":"Patriotic",
+        "rating":"5.0",
+        "photo":"../assets/kesari.jpg"
+    },
+    {
+        "id":5,
+        "name":"Robo",
+        "theme":"Fiction",
+        "rating":"4.8",
+        "photo":"../assets/robo.jpg"
+    },
+    {
+        "id":6,
+        "name":"End Game",
+        "theme":"Fiction",
+        "rating":"4.8",
+        "photo":"../assets/endgame.jpg"
+    }
+]
